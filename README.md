@@ -26,3 +26,5 @@ def getStudentById(studentId):
 
 DB đã thêm r. Mng thấy sai hay thiếu field thì bổ sung 
 ở schema.sql nhé
+
+$env:FLASK_DEBUG = "1" để bật debug mode

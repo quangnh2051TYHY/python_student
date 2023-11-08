@@ -1,16 +1,26 @@
 <doctype html>
 <title>Add User - Python Flask MySQL CRUD</title>
 <h2>Add User</h2>
-<form method="post" action="/add">
+<form method="post" action="/student/add">
     <dl>
 		<p>
-			<input name="inputName" value="" type="text" placeholder="Name" autocomplete="off" required>
+			<input name="inputLastName" value="" type="text" placeholder="Last Name" autocomplete="off" required>
+		</p>
+		<p>
+			<input name="inputFirstName" value="" type="text" placeholder="First Name" autocomplete="off" required>
 		</p>
 		<p>
 			<input name="inputEmail" value="" type="text" placeholder="Email" autocomplete="off" required>
 		</p>
+		<label for="start">Date of birth:</label>
 		<p>
-			<input name="inputPassword" value="" type="password" placeholder="Password" autocomplete="off" required>
+			<input name="inputDob" type="date" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+		</p>
+		<p>
+			<input name="inputAddress" value="" type="text" placeholder="Address" autocomplete="off" required>
+		</p>
+		<p>
+			<input name="inputPoint" value="" type="text" placeholder="Total point" autocomplete="off" required>
 		</p>
     </dl>
     <p>
