@@ -1,0 +1,5 @@
+{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
+{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
+{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
+{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
+{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}

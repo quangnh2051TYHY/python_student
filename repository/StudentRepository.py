@@ -32,7 +32,6 @@ def getAllStudent():
             dob = row[4]
             address = row[5]
             point = row[6]
-            print(point)
             studentList.append(student.Student(studentNo, lastName, firstName, email, dob, address, point))
 
         return studentList
@@ -80,7 +79,6 @@ def updateStudent(studentNo, lastName, firstName, email, dob, address, totalPoin
 def deleteStudentById(studentNo):
     try:
         connection = sqlite3.connect('database.db')
-        print(type(studentNo))
         cursor = connection.execute("DELETE FROM students WHERE studentNo = ?", studentNo)
         connection.commit()
     finally:
