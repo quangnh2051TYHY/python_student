@@ -13,27 +13,27 @@
         <form method="post" action="/update">
             <div class="mb-3">
                 <label for="inputLastName" class="form-label">Last Name:</label>
-                <input name="inputLastName" value="" type="text" class="form-control" placeholder="Last Name" required>
+                <input name="inputLastName" value="{{ student['lastName'] }}" type="text" class="form-control" placeholder="Last Name" required>
             </div>
             <div class="mb-3">
                 <label for="inputFirstName" class="form-label">First Name:</label>
-                <input name="inputFirstName" value="" type="text" class="form-control" placeholder="First Name" required>
+                <input name="inputFirstName" value="{{ student['firstName'] }}" type="text" class="form-control" placeholder="First Name" required>
             </div>
             <div class="mb-3">
                 <label for="inputEmail" class="form-label">Email:</label>
-                <input name="inputEmail" value="" type="text" class="form-control" placeholder="Email" required>
+                <input name="inputEmail" value="{{ student['email'] }}" type="text" class="form-control" placeholder="Email" required>
             </div>
             <div class="mb-3">
                 <label for="inputDob" class="form-label">Date of Birth:</label>
-                <input name="inputDob" type="text" class="form-control" placeholder="Date of Birth" data-toggle="flatpickr" required>
+                <input name="inputDob" value="{{ student['dob'] }}" type="text" class="form-control" placeholder="Date of Birth" data-toggle="flatpickr" required>
             </div>
             <div class="mb-3">
                 <label for="inputAddress" class="form-label">Address:</label>
-                <input name="inputAddress" value="" type="text" class="form-control" placeholder="Address" required>
+                <input name="inputAddress" value="{{ student['address'] }}" type="text" class="form-control" placeholder="Address" required>
             </div>
             <div class="mb-3">
                 <label for="inputPoint" class="form-label">Total Point:</label>
-                <input name="inputPoint" value="" type="text" class="form-control" placeholder="Total Point" required>
+                <input name="inputPoint" value="{{ student['totalPoint'] }}" type="text" class="form-control" placeholder="Total Point" required>
             </div>
             <div class="mb-3">
                 <input type="submit" value="Submit" class="btn btn-primary">
@@ -46,7 +46,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             flatpickr('[name="inputDob"]', {
-                dateFormat: 'Y-m-d',
+                dateFormat: 'd-m-Y',
                 enableTime: false,
             });
         });

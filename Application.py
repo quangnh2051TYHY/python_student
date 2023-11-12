@@ -3,15 +3,18 @@ from service import StudentService as studentService
 from enhance import htmlContentGetService as htmlGetService
 import json
 
+app = Flask(__name__)
+
 
 def init_app():
-    print("""Initialize the core application.""")
-    app = Flask(__name__)
+    print("Initialize the core application.")
     studentService.initDataBaseWhenStartApp()
     return app
 
 
-app = init_app()
+if __name__ == '__main__':
+    init_app()
+    app.run(debug=True)
 
 
 @app.route('/student/add', methods=['POST'])
