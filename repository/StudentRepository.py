@@ -21,6 +21,7 @@ def createStudent(lastName, firstName, email, dob, address, totalPoint):
 
 def getAllStudent():
     try:
+        print("Get All Student")
         connection = sqlite3.connect('database.db')
         cursor = connection.execute("SELECT * FROM students")
         studentList = []
