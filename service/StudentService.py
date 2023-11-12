@@ -1,4 +1,4 @@
-from python_student.repository import StudentRepository as studentRepository
+from repository import StudentRepository as studentRepository
 import sqlite3
 
 

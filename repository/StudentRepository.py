@@ -1,12 +1,12 @@
 import sqlite3
-from python_student.model import Student as student
+from model import Student as student
 
 
 def createStudent(lastName, firstName, email, dob, address, totalPoint):
     try:
         connection = sqlite3.connect('database.db')
         sql = "INSERT INTO students(lastName, firstName, email, dob, address, totalPoint) VALUES (?, ?, ?, ?, ?, ?)"
-        data = (lastName, firstName, email, '2023-11-07 17:30:22', address, totalPoint)
+        data = (lastName, firstName, email, dob, address, totalPoint)
         cursor = connection.cursor()
         cursor.execute(sql, data)
         connection.commit()
@@ -66,7 +66,7 @@ def updateStudent(studentNo, lastName, firstName, email, dob, address, totalPoin
         connection = sqlite3.connect('database.db')
         sql = ("UPDATE students SET lastName = ?, firstName = ?, email = ?, dob = ?, "
                "address = ?, totalPoint = ? WHERE studentNo = ?")
-        data = (lastName, firstName, email, '2023-11-07 17:30:22', address, totalPoint,
+        data = (lastName, firstName, email, dob, address, totalPoint,
                 studentNo)
         cursor = connection.cursor()
         cursor.execute(sql, data)

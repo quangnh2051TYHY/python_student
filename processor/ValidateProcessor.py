@@ -1,6 +1,6 @@
 # All function for validate request please write here
 import sqlite3
-from flask import flash, render_template, request, redirect
+from flask import flash, request, redirect
 
 
 def validateCreate():

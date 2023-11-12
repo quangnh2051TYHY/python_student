@@ -1,6 +1,6 @@
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
-from python_student.model import Student as student
+from model import Student as student
 
 
 def getStudentHtml():

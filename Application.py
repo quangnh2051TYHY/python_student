@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
-from python_student.service import StudentService as studentService
-from python_student.enhance import htmlContentGetService as htmlGetService
+from service import StudentService as studentService
+from enhance import htmlContentGetService as htmlGetService
 import json
 
 
