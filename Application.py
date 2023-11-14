@@ -39,7 +39,9 @@ def getAllStudentInWebContent():
 
     with open("store/student.txt", 'a') as f:
         for student in students:
+            # vars return __dict__ : https://www.w3schools.com/python/ref_func_vars.asp
             student_data = vars(student)
+            # Dạng như kiểu Redis (key,value) nối với nhau bằng dấu ","
             student_line = ', '.join(f"{key}: {value}" for key, value in student_data.items())
             f.write(student_line + '\n')
 
