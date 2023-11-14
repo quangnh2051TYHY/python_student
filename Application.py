@@ -43,7 +43,7 @@ def getAllStudentInWebContent():
             student_line = ', '.join(f"{key}: {value}" for key, value in student_data.items())
             f.write(student_line + '\n')
 
-    return "Data saved to file !"
+    return "Export Data Successfully !"
 
 
 @app.route('/json/<id>')
