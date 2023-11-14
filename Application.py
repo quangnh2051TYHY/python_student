@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 from service import StudentService as studentService
 from enhance import htmlContentGetService as htmlGetService
 import json
@@ -36,17 +36,24 @@ def createStudent():
 @app.route('/crawl/')
 def getAllStudentInWebContent():
     students = htmlGetService.getStudentHtml()
-    f = open("store/student.txt", 'a')
-    # Jump to end of file to write append
-    f.seek(0, 2)
-    jsonStudentList = []
-    for student in students:
-        jsonStudentList.append(json.dumps(vars(student)))
-        f.write(str(vars(student)))
-        f.write('\n')
 
-    f.close()
-    return jsonStudentList
+    with open("store/student.txt", 'a') as f:
+        for student in students:
+            student_data = vars(student)
+            student_line = ', '.join(f"{key}: {value}" for key, value in student_data.items())
+            f.write(student_line + '\n')
+
+    return "Data saved to file !"
+
+
+@app.route('/json/<id>')
+def getJsonById(id):
+    student = studentService.getStudentById(id)
+    # Dùng jsonify của Flask để tự động trả về Response và các thuộc tính mặc định như:
+    # Content-Type, application/json,v.v.... ( chắc tránh CORS)
+    # IMPORTANT : Tự định nghĩa lại to_dict()
+    if student is not None:
+        return jsonify(student.to_dict())
 
 
 # Get all student

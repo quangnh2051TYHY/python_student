@@ -4,7 +4,7 @@ from model import Student as student
 
 
 def getStudentHtml():
-    host_url = 'http://172.17.0.4:5000/'
+    host_url = 'http://127.0.0.1:5000/'
     html = urllib.request.urlopen(host_url).read()
     # Read all page
     soup = BeautifulSoup(html, 'html.parser')

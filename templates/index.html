@@ -27,12 +27,17 @@
 
         .btn-container .btn-delete,
         .btn-container .btn-update,
-        #btn-create {
+        .btn-container .btn-json,
+        #btn-create,
+        #btn-crawl {
+            flex: 1;
             border: 1px solid black;
             border-radius: 5px;
             padding: 5px 10px;
             margin: 5px;
             display: inline-block;
+            text-align: center;
+            text-decoration: none;
         }
 
         .btn-container .btn-delete {
@@ -41,6 +46,10 @@
 
         .btn-container .btn-update {
             background-color: #d1c76d;
+        }
+
+        .btn-container .btn-json {
+            background-color: #c64424;
         }
 
 
@@ -52,18 +61,18 @@
         .table td, .table th {
             white-space: nowrap;
             vertical-align: middle;
-        }
-
-        .table th {
             text-align: center;
         }
     </style>
 </head>
 <body>
-
-<div class="container-table col-md-7">
-    <a id="btn-create" class="btn btn-danger" href="/create-page">Create</a>
-    <table class="table table-bordered table-hover">
+<div class="font-monospace text-center fs-1 mt-5">MSE#13 - GROUP 1</div>
+<div class="container-table col-md-10">
+    <div>
+        <a id="btn-create" class="btn btn-secondary" href="/create-page">Create User</a>
+        <a id="btn-crawl" class="btn btn-secondary" href="/crawl">Export Data</a>
+    </div>
+    <table class="table table-striped table-hover">
         <thead>
         <tr>
             <th>StudentNo</th>
@@ -89,6 +98,7 @@
 
                 <td class="btn-container">
                     <a class="btn-update" href="/update-page/{{ entry.studentNo }}">Edit</a>
+                    <a class="btn-json" href="/json/{{ entry.studentNo }}">JSON</a>
                     <a class="btn-delete" href="/delete/{{ entry.studentNo }}">Delete</a>
                 </td>
             </tr>
@@ -96,5 +106,25 @@
         </tbody>
     </table>
 </div>
+<script>
+    //Dùng querySelectorAll để lấy tất cả các phần tử rồi duyệt qua forEach
+    document.querySelectorAll('.btn-json').forEach(function (btn) {
+        //Thêm sự kiện click cho mỗi Button Json
+        btn.addEventListener('click', function (event) {
+            event.preventDefault();
+            var url = this.getAttribute('href');
+            //Dùng fetch gọi API như Code FE
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    //Tạo ra popup như một alert để xem dữ liệu
+                    alert(JSON.stringify(data));
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    });
+</script>
 </body>
 </html>
