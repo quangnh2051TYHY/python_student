@@ -1,5 +1,3 @@
-{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
-{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
-{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
-{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
-{'studentNo': '1', 'lastName': 'Ngo', 'firstName': 'Hong Quang', 'email': 'quangnh26@fpt.com', 'dob': '2023-11-07 17:30:22', 'address': 'Thach That, Ha Noi', 'totalPoint': '100'}
+studentNo: 1, lastName: Ngo, firstName: Quang, email: quangnh26@fpt.com, dob: 07-11-2023, address: Thach That, Ha Noi, totalPoint: 100
+studentNo: 3, lastName: Duong, firstName: Tung, email: tung@gmail.com, dob: 14-11-2023, address: Ha Noi, totalPoint: 1000
+studentNo: 4, lastName: Duong , firstName: Tung, email: tung@gmail.com, dob: 15-11-2023, address: Ha Noi, totalPoint: 1
