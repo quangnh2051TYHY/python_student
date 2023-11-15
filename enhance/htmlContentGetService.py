@@ -5,19 +5,20 @@ from model import Student as student
 
 def getStudentHtml():
     host_url = 'http://127.0.0.1:5000/'
-    html = urllib.request.urlopen(host_url).read()
-    # Read all page
+    try:
+        html = urllib.request.urlopen(host_url).read()
+    except Exception as e:
+        print(f"Error opening URL: {e}")
+        return []
     soup = BeautifulSoup(html, 'html.parser')
-    tags = soup.find_all('tr')
-    removeHeaderTrList = tags[1: len(tags)]
+
+    tr_tags = soup.select('tr')[1:]
     studentList = []
-    for eachTr in removeHeaderTrList:
-        # Find all td in each pair of <tr> tag
-        soup = BeautifulSoup(str(eachTr), "html.parser")
-        tdList = soup.find_all('td')
-        if len(tdList) > 0:
-            stu = student.Student(tdList[0].text, tdList[1].text, tdList[2].text,
-                                  tdList[3].text, tdList[4].text, tdList[5].text, tdList[6].text)
+
+    for tr in tr_tags:
+        td_tags = tr.select('td')[:7]
+        if td_tags:
+            stu = student.Student(*[td.text for td in td_tags])
             studentList.append(stu)
 
     return studentList
