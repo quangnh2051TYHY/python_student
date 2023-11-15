@@ -127,18 +127,7 @@
     });
     document.getElementById('btn-crawl').addEventListener('click', function (event) {
         event.preventDefault();
-        var url = this.getAttribute('href');
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    alert("Export Data Successfully");
-                } else {
-                    alert("Error: " + response.statusText);
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+        window.location.href = this.getAttribute('href');
     });
 </script>
 </body>

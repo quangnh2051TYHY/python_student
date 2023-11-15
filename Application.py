@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, jsonify, send_file
 from service import StudentService as studentService
 from enhance import htmlContentGetService as htmlGetService
 import json
@@ -37,15 +37,16 @@ def createStudent():
 def getAllStudentInWebContent():
     students = htmlGetService.getStudentHtml()
 
-    with open("store/student.txt", 'a') as f:
+    with open("store/student.txt", 'a', encoding='utf-8') as f:
+        f.write('New Data :\n')
         for student in students:
             # vars return __dict__ : https://www.w3schools.com/python/ref_func_vars.asp
             student_data = vars(student)
             # Dạng như kiểu Redis (key,value) nối với nhau bằng dấu ","
             student_line = ', '.join(f"{key}: {value}" for key, value in student_data.items())
             f.write(student_line + '\n')
-
-    return "Export Data Successfully !"
+    # Use send_file of flask to Download File when deploy :)))))
+    return send_file("store/student.txt", as_attachment=True)
 
 
 @app.route('/json/<id>')
