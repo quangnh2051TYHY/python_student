@@ -1,0 +1,9 @@
+New Data :
+studentNo: 1, lastName: Ngo, firstName: Quang, email: quangnh26@fpt.com, dob: 07-11-2023, address: Thạch Thất, totalPoint: 100
+studentNo: 3, lastName: Duong, firstName: Tung, email: tung@gmail.com, dob: 14-11-2023, address: Ha Noi, totalPoint: 1000
+studentNo: 4, lastName: Duong , firstName: Tung, email: tung@gmail.com, dob: 15-11-2023, address: Ha Noi, totalPoint: 1
+New Data :
+studentNo: 1, lastName: Ngo, firstName: Quang, email: [email protected], dob: 07-11-2023, address: Thạch Thất, totalPoint: 100
+studentNo: 3, lastName: Duong, firstName: Tung, email: [email protected], dob: 14-11-2023, address: Ha Noi, totalPoint: 1000
+studentNo: 4, lastName: Duong , firstName: Tung, email: [email protected], dob: 15-11-2023, address: Ha Noi, totalPoint: 1
+New Data :
