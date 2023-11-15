@@ -1,14 +1,11 @@
+import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 from model import Student as student
-import requests
-
 
 def getStudentHtml():
-    host_url = 'https://mse.69mholdings.com/'
+    host_url = 'http://127.0.0.1:5000/'
     try:
-        response = requests.get(host_url)
-        response.raise_for_status()
-        html = response.text
+        html = urllib.request.urlopen(host_url).read()
     except Exception as e:
         print(f"Error opening URL: {e}")
         return []
